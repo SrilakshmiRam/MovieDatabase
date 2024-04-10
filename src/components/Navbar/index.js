@@ -41,17 +41,17 @@ const Navbar = () => (
             </Link>
           </div>
           <ul className="navigation-btns">
-            <li>
+            <li className="nav-item">
               <Link to="/" className="nav-link">
                 Popular
               </Link>
             </li>
-            <li>
+            <li className="nav-item">
               <Link to="/top-rated" className="nav-link">
                 Top Rated
               </Link>
             </li>
-            <li>
+            <li className="nav-item">
               <Link to="/upcoming" className="nav-link">
                 Upcoming
               </Link>

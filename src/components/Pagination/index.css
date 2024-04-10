@@ -1,0 +1,13 @@
+.pagination-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageno {
+  padding-left: 6px;
+  padding-right: 6px;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 600;
+}

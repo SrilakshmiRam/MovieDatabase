@@ -2,18 +2,18 @@ import {Component} from 'react'
 
 import Navbar from '../Navbar'
 import UpcomingMovie from '../UpcomingMovie'
+import Pagination from '../Pagination'
 import './index.css'
 
 class Upcoming extends Component {
-  state = {upcomingMoviesList: []}
+  state = {upcomingMoviesList: [], apiResponse: {}}
 
   componentDidMount() {
     this.getupcomingMovies()
   }
 
-  getupcomingMovies = async () => {
-    const url =
-      'https://api.themoviedb.org/3/movie/upcoming?api_key=d30d2825974522dcd42d08d55d5e692e&language=en-US&page=1'
+  getupcomingMovies = async (page = 1) => {
+    const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=d30d2825974522dcd42d08d55d5e692e&language=en-US&page=${page}`
 
     const options = {
       method: 'GET',
@@ -36,21 +36,28 @@ class Upcoming extends Component {
 
       this.setState({
         upcomingMoviesList: updatedData.results,
+        apiResponse: updatedData,
       })
     }
   }
 
   render() {
-    const {upcomingMoviesList} = this.state
+    const {upcomingMoviesList, apiResponse} = this.state
     return (
-      <div>
-        <Navbar />
-        <ul className="upcoming-movies-list">
-          {upcomingMoviesList.map(eachMovie => (
-            <UpcomingMovie movieDetails={eachMovie} key={eachMovie.id} />
-          ))}
-        </ul>
-      </div>
+      <>
+        <div>
+          <Navbar />
+          <ul className="upcoming-movies-list">
+            {upcomingMoviesList.map(eachMovie => (
+              <UpcomingMovie movieDetails={eachMovie} key={eachMovie.id} />
+            ))}
+          </ul>
+        </div>
+        <Pagination
+          totalPages={apiResponse.totalPages}
+          apiCallBack={this.getupcomingMovies}
+        />
+      </>
     )
   }
 }

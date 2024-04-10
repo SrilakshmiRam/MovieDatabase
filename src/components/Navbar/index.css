@@ -8,6 +8,10 @@
   text-decoration: none;
 }
 
+.nav-item {
+  margin-right: 10px;
+}
+
 .navbar-container {
   padding-left: 20px;
   padding-right: 20px;

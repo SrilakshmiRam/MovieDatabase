@@ -2,18 +2,18 @@ import {Component} from 'react'
 
 import Navbar from '../Navbar'
 import TopRatedMovie from '../TopRatedMovie'
+import Pagination from '../Pagination'
 import './index.css'
 
 class TopRated extends Component {
-  state = {topRatedMovies: []}
+  state = {topRatedMovies: [], apiResponse: {}}
 
   componentDidMount() {
     this.getTopRatedMovies()
   }
 
-  getTopRatedMovies = async () => {
-    const url =
-      'https://api.themoviedb.org/3/movie/top_rated?api_key=d30d2825974522dcd42d08d55d5e692e&language=en-US&page=1'
+  getTopRatedMovies = async (page = 1) => {
+    const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=d30d2825974522dcd42d08d55d5e692e&language=en-US&page=${page}`
 
     const options = {
       method: 'GET',
@@ -37,21 +37,28 @@ class TopRated extends Component {
 
       this.setState({
         topRatedMovies: updatedData.results,
+        apiResponse: updatedData,
       })
     }
   }
 
   render() {
-    const {topRatedMovies} = this.state
+    const {topRatedMovies, apiResponse} = this.state
     return (
-      <div>
-        <Navbar />
-        <ul className="top-rated-movies-list">
-          {topRatedMovies.map(eachMovie => (
-            <TopRatedMovie movieDetails={eachMovie} key={eachMovie.id} />
-          ))}
-        </ul>
-      </div>
+      <>
+        <div>
+          <Navbar />
+          <ul className="top-rated-movies-list">
+            {topRatedMovies.map(eachMovie => (
+              <TopRatedMovie movieDetails={eachMovie} key={eachMovie.id} />
+            ))}
+          </ul>
+        </div>
+        <Pagination
+          totalPages={apiResponse.totalPages}
+          apiCallBack={this.getTopRatedMovies}
+        />
+      </>
     )
   }
 }
