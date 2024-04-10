@@ -1,0 +1,13 @@
+.search-movies {
+  list-style-type: none;
+  flex-wrap: wrap;
+  display: flex;
+  padding-left: 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+.searched-movies-list {
+  display: flex;
+  flex-direction: column;
+}

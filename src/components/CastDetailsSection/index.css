@@ -1,0 +1,27 @@
+.cast-item {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 10px;
+  border: 1px solid #d1dbdbdb;
+}
+
+.cast-image {
+  width: 100%;
+}
+
+.name {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 700;
+  color: #140507;
+  padding-left: 6px;
+}
+
+.character-name {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 700;
+  color: #555559;
+  padding-left: 6px;
+}

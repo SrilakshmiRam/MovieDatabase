@@ -1,0 +1,49 @@
+.poster-image {
+  width: 80%;
+}
+
+.movie-details-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overview {
+  font-family: 'Roboto';
+  font-size: 22px;
+  font-weight: 700;
+  color: #aaadad;
+}
+
+.releaseDate {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 700;
+  color: #bd7e51;
+}
+
+.duration {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 700;
+  color: #535259;
+}
+
+.Rating {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 700;
+  color: #cf1b0a;
+}
+
+.movie-name {
+  font-family: 'Roboto';
+  font-size: 25px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.text-container {
+  padding-left: 30px;
+}

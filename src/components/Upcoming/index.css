@@ -1,0 +1,8 @@
+.upcoming-movies-list {
+  list-style-type: none;
+  flex-wrap: wrap;
+  display: flex;
+  padding-left: 0px;
+  justify-content: center;
+  align-items: center;
+}

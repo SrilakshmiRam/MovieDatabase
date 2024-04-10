@@ -1,0 +1,14 @@
+.cast-details {
+  list-style-type: none;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+}
+
+.heading {
+  font-family: 'Roboto';
+  font-size: 30px;
+  font-weight: 800;
+  color: #a82224;
+  padding-left: 40px;
+}
